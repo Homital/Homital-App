@@ -1,1 +1,1 @@
-# Homital-App-React
+# Homital-App
