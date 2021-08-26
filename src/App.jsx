@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,8 +7,8 @@ import {
 
 import Home from './pages/Home';
 import User from './pages/User';
-// import Login from './pages/Login';
-// import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import NoMatch from './pages/NoMatch';
 
 export default function App() {
@@ -21,6 +20,12 @@ export default function App() {
         </Route>
         <Route path="/user">
           <User />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
         </Route>
         <Route path="*">
           <NoMatch />
