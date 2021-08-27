@@ -23,7 +23,7 @@ export default function Layout() {
   };
 
   return (
-    <Card elevation={4} className="flex flex-row min-h-32">
+    <Card elevation={0} className="flex flex-row min-h-32 bg-transparent">
       <div className="w-32 flex flex-row justify-center content-center">
         <div className="flex flex-col justify-center content-center">
           <AccountCircleIcon className={`w-24 h-24 ${refreshToken ? 'text-gray-600' : 'text-gray-300'}`} />
@@ -33,8 +33,8 @@ export default function Layout() {
         {
           refreshToken ? (
             <>
-              <CardContent className="flex flex-col gap-4">
-                <Typography component="h5" variant="h5">
+              <CardContent className="flex flex-col mt-4">
+                <Typography component="h4" variant="h4" className="mb-2">
                   {username}
                 </Typography>
                 <Typography component="p" variant="body1">
@@ -43,9 +43,9 @@ export default function Layout() {
               </CardContent>
               <CardActions className="self-stretch flex flex-row-reverse">
                 <Button
-                  variant="contained"
+                  variant="outlined"
                   size="small"
-                  color="secondary"
+                  className="text-pink-700"
                   onClick={(e) => {
                     e.preventDefault();
                     logout();
