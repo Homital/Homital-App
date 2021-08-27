@@ -4,6 +4,7 @@ import './index.css';
 import '@fontsource/roboto';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { Provider as StoreProvider } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import App from './App';
 
 import store from './store';
@@ -29,6 +30,10 @@ ReactDOM.render(
   <React.StrictMode>
     <StoreProvider store={store}>
       <ThemeProvider theme={theme}>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Homital</title>
+        </Helmet>
         <App />
       </ThemeProvider>
     </StoreProvider>
