@@ -33,7 +33,7 @@ export default function Layout() {
         {
           refreshToken ? (
             <>
-              <CardContent className="flex flex-col mt-4">
+              <CardContent className="flex flex-col mt-4 pb-0">
                 <Typography component="h4" variant="h4" className="mb-2">
                   {username}
                 </Typography>
@@ -56,7 +56,7 @@ export default function Layout() {
               </CardActions>
             </>
           ) : (
-            <CardContent>
+            <CardContent className="mt-4">
               <Typography component="h5" variant="h5">
                 Please
                 {' '}

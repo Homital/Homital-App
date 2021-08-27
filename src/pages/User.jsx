@@ -7,7 +7,7 @@ import UserOptionList from '../components/UserOptionList';
 export default function Page() {
   return (
     <Layout index={1} className="flex flex-col">
-      <div className="px-4">
+      <div className="px-4 h-40">
         <UserCard />
       </div>
       <div className="p-4">
