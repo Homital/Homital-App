@@ -8,6 +8,9 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import ErrorIcon from '@material-ui/icons/Clear';
+import DoneIcon from '@material-ui/icons/Done';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { login as loginAction } from '../store/accountSlice';
 
@@ -45,23 +48,29 @@ export default function Page() {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loginIcon, setLoginIcon] = useState(null);
 
   useEffect(() => {
     if (refreshToken) {
       history.push('/user');
     }
-  }, [refreshToken]);
+  }, []);
 
   const login = () => {
+    setLoginIcon(<CircularProgress size={16} color="inherit" />);
     loginApiWrapper(username, password).then((data) => {
       dispatch(loginAction({
         username,
         refreshToken: data.refresh_token,
         accessToken: data.access_token,
       }));
-      history.push('/user');
+      setLoginIcon(<DoneIcon />);
+      setTimeout(() => {
+        history.push('/user');
+      }, 500);
     }).catch((err) => {
       if (err.response) {
+        setLoginIcon(<ErrorIcon />);
         // eslint-disable-next-line no-console
         console.log(`${err.response.status}: ${JSON.stringify(err.response.data)}`);
       }
@@ -116,6 +125,7 @@ export default function Page() {
                 color="primary"
                 className="w-full"
                 ref={loginEl}
+                endIcon={loginIcon}
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
