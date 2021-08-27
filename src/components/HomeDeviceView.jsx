@@ -40,6 +40,7 @@ export default function HomeDeviceView() {
           <Tab label="Corridor" />
           <Tab label="Restroom" />
         </Tabs>
+        <div className="flex-1" />
         <IconButton aria-label="menu" className="text-gray-600 py-0 pr-0 pl-2" onClick={handleMenuClick}>
           <MenuIcon />
         </IconButton>
