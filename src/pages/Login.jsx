@@ -66,7 +66,7 @@ export default function Page() {
       }));
       setLoginIcon(<DoneIcon />);
       setTimeout(() => {
-        history.push('/user');
+        history.push('/');
       }, 500);
     }).catch((err) => {
       if (err.response) {

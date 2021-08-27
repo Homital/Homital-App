@@ -40,7 +40,7 @@ function OptionItem({ title, icon, link }) {
   );
 }
 
-export default function Layout() {
+export default function UserOptionList() {
   return (
     <div className="flex flex-col min-h-32 bg-white shadow-xl rounded-xl">
       <OptionItem title="Settings" icon={<SettingsIcon className="mt-0.5" />} link="/settings" />
